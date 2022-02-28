@@ -3,7 +3,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger)
 
 const shadowName = document.querySelector('#name > p.shadow')
-const topShadowName = shadowName.getBoundingClientRect().top
 const shadowSubTitle = document.querySelector('#sub_title > p.shadow')
 
 shadowName.style.transform = `translateX(15px)`
@@ -14,11 +13,25 @@ gsap.to( shadowName, {
       tigger: shadowName,
       start: `${window.innerHeight} bottom`,
       end: `${window.innerHeight * 2} top`,
-      markers: true,
       scrub: true,
     },
-    y: -150,
+    x: 20,
+    y: 150,
     ease: "power1.inOut",
     duration: 3
   }
+)
+
+gsap.to( shadowSubTitle, {
+  scrollTrigger: {
+    tigger: shadowSubTitle,
+    start: `${window.innerHeight} bottom`,
+    end: `${window.innerHeight * 2} top`,
+    scrub: true,
+  },
+  x: 17,
+  y: 70,
+  ease: "power1.inOut",
+  duration: 3
+}
 )
