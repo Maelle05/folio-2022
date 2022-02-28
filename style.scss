@@ -1,0 +1,176 @@
+/** 
+  Init
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+  Fonts 
+*/
+
+@font-face{
+  font-family: Delirium;
+  src: url('static/fonts/delirium.ttf');
+}
+
+@font-face{
+  font-family: Outfit;
+  src: url('static/fonts/outfit-regular.ttf');
+}
+
+@font-face{
+  font-family: OutfitMedium;
+  src: url('static/fonts/outfit-medium.ttf');
+}
+
+/** 
+  Variables
+*/
+
+* {
+  --main-bg-color: #b8302a;
+  --white-color: #ffffff;
+  --red-dark-color: #912D27;
+  --creme-color: #F7C89F;
+}
+
+/**
+  Main
+*/
+
+body{
+  background-color: var(--main-bg-color);
+  background-image: url('static/assets/img/noise.png');
+  background-size: contain;
+
+}
+
+#content{
+  width: 100%;
+  overflow: hidden;
+  section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &#arrival{
+      height: 100vh;
+
+      img#avatar{
+        z-index: 3;
+        width: 350px;
+        display: block;
+      }
+      #name{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+  
+        h1 {
+          color: var(--white-color);
+          font-family: Delirium;
+          font-size: 15rem;
+          font-weight: 200;
+          z-index: 3;
+          display: flex;
+          flex-direction: row;
+        }
+  
+        p.shadow{
+          z-index: 2;
+          position: absolute;
+          top : 20px;
+          color: var(--red-dark-color);
+          font-family: Delirium;
+          font-size: 15rem;
+          font-weight: 200;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+  
+        span{
+          opacity: 0;
+  
+          &.active{
+            opacity: 1;
+            transition: opacity 0.7s;
+          }
+  
+          &.space{
+            width: 26px;
+          }
+  
+          &.trema{
+            transform: translate(0, -20px);
+            &::before {
+              content: "";
+              display: block;
+              width: 80%;
+              height: 20px;
+              transform: translate(18%, -16px);
+              background-color: var(--red-dark-color);
+            }
+  
+            &.title::before {
+              background-color: var(--creme-color);
+            }
+          }
+        }
+      }
+  
+      #sub_title{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+  
+        h2 {
+          color: var(--creme-color);
+          font-family: Delirium;
+          font-size: 6rem;
+          font-weight: 200;
+          z-index: 3;
+          display: flex;
+          flex-direction: row;
+        }
+  
+        p.shadow{
+          z-index: 2;
+          position: absolute;
+          top : 10px;
+          color: var(--red-dark-color);
+          font-family: Delirium;
+          font-size: 6rem;
+          font-weight: 200;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+      }
+    }
+
+    &#projects{
+      min-height: 100vh;
+      position: relative;
+      div{
+        position: absolute;
+        top: 10vh;
+        &:first-child{
+          filter: drop-shadow(0px 29px 250px rgba(0, 0, 0, 0.25));
+        }
+        img.project{
+          transform-origin: center;
+          width: 800px;
+        }
+      }
+    }
+
+    &#contact{
+      height: 100vh;
+    }
+  }
+}
