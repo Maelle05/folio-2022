@@ -45,12 +45,11 @@ body{
   background-color: var(--main-bg-color);
   background-image: url('static/assets/img/noise.png');
   background-size: contain;
-
 }
 
 #content{
   width: 100%;
-  overflow: hidden;
+  
   section{
     display: flex;
     flex-direction: column;
@@ -157,6 +156,7 @@ body{
       min-height: 100vh;
       margin-top: 40px;
       position: relative;
+      top: 40px;
       div{
         position: absolute;
         top: 10vh;
